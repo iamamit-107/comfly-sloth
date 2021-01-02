@@ -15,9 +15,9 @@ import {
 function App() {
   return (
     <>
-      <Navbar />
-      <Sidebar />
       <Router>
+        <Navbar />
+        <Sidebar />
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route exact path="/about" component={AboutPage} />
@@ -27,8 +27,8 @@ function App() {
           <Route exact path="/products/:id" component={SingleProductPage} />
           <Route exact path="*" component={ErrorPage} />
         </Switch>
+        <Footer />
       </Router>
-      <Footer />
     </>
   );
 }
