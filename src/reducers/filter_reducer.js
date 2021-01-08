@@ -66,8 +66,40 @@ const filter_reducer = (state, action) => {
       const { name, value } = action.payload;
       return { ...state, filters: { ...state.filters, [name]: value } };
     case FILTER_PRODUCTS:
-      console.log("Filtering");
-      return { ...state };
+      let { all_products } = state;
+      let { text, category, company, price, color, shipping } = state.filters;
+
+      let tempoProducts = [...all_products];
+
+      if (text) {
+        tempoProducts = tempoProducts.filter((product) =>
+          product.name.toLowerCase().startsWith(text)
+        );
+      }
+      if (shipping) {
+        tempoProducts = tempoProducts.filter(
+          (product) => product.shipping === shipping
+        );
+      }
+      if (company !== "all") {
+        tempoProducts = tempoProducts.filter(
+          (product) => product.company === company
+        );
+      }
+      if (category !== "all") {
+        tempoProducts = tempoProducts.filter(
+          (product) => product.category === category
+        );
+      }
+      if (color !== "all") {
+        tempoProducts = tempoProducts.filter((product) =>
+          product.colors.find((c) => c === color)
+        );
+      }
+
+      tempoProducts = tempoProducts.filter((p) => p.price <= price);
+
+      return { ...state, filtered_products: tempoProducts };
 
     case CLEAR_FILTERS:
       return {
