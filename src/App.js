@@ -22,7 +22,9 @@ function App() {
           <Route exact path="/" component={HomePage} />
           <Route exact path="/about" component={AboutPage} />
           <Route exact path="/cart" component={CartPage} />
-          <Route exact path="/checkout" component={CheckoutPage} />
+          <PrivateRoute exact path="/checkout">
+            <CheckoutPage />
+          </PrivateRoute>
           <Route exact path="/products" component={ProductsPage} />
           <Route exact path="/products/:id" component={SingleProductPage} />
           <Route exact path="*" component={ErrorPage} />
