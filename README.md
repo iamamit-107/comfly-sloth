@@ -4,7 +4,7 @@
 
 ### Product Page picture
 
-![prouduct review]('./src/assets/Capture.PNG')
+![prouduct review](./src/assets/Capture.PNG)
 
 ---
 
