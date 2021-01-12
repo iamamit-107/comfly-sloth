@@ -1,17 +1,13 @@
-## Notes
+# Comfy Sloth - an ecommerce website
 
-#### Older React Version
+---
 
-```
-"react": "^16.13.1",
-"react-dom": "^16.13.1",
-"react-scripts": "3.4.3",
-```
+### Product Page picture
 
-#### Current React Version
+![prouduct review]('./src/assets/Capture.PNG')
 
-```
-"react": "^17.0.1",
-"react-dom": "^17.0.1",
-"react-scripts": "4.0.0",
-```
+---
+
+### Single Page picture
+
+![prouduct review]('./src/assets/Capture2.PNG')
